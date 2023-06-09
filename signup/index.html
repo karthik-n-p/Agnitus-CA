@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.10/dist/sweetalert2.min.js"></script>
+<link rel="stylesheet" href="custom.css">
+
+
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Agnitus</title>
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.js"
+        
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+        crossorigin="anonymous"></script>
+    <script>
+        function SubForm (){
+            $.ajax({
+                url:"https://api.apispreadsheets.com/data/5JfFXXtKlGQvIoWk/",
+                type:"post",
+                data:$("#myForm").serializeArray(),
+                success: function(){
+                    Swal.fire({
+   icon: 'success',
+   title: 'Sign up successful',
+   text: 'Confirmation mail will be sent to your account shortly',
+   html: '<h3>Join our WhatsApp group to get further updates</h3>' +
+         '<a class="signupcontact2" href="https://chat.whatsapp.com/EcKPooKOl5B8wjZvEERSdb">Click here to join</a>' +
+         '<br><br>',
+   confirmButtonColor: '#2ecc71',
+   confirmButtonText: 'OK'
+}).then((result) => {
+   if (result.isConfirmed) {
+      window.location.href = 'https://ca.agnituscoet.com';
+   }
+});
+
+},
+               
+                error: function(){
+                    alert("There was an error :(")
+                }
+            });
+        }
+    </script>
+   
+</head>
+<body>
+<header>
+    <div class="logo"  onclick="window.location.href='../index.html';">
+        <img src="images/logo.png" alt="Agnitus logo">
+    </div>
+</header>
+<section id="last">
+             
+    <div class="content">
+        <h1>Sign-Up</h1> 
+                
+
+    <form id="myForm" class="form-horizontal">
+        
+        <div class="form-group">
+            <div class="col-sm-10 ">
+
+        
+        <input class="form-control" name="name" placeholder="FULL NAME"/>
+            </div>
+                    </div> 
+ 
+                    <div class="form-group">
+                        <div class="col-sm-10 ">
+        
+        <input class="form-control" name="college" placeholder="COLLEGE"/>
+    </div>
+</div> 
+
+
+
+        <div class="form-group">
+            <div class="col-sm-10 ">
+        
+        <input class="form-control" class="form-control" name="year" placeholder="YEAR"/>
+    </div>
+</div> 
+
+        <div class="form-group">
+            <div class="col-sm-10 ">
+      
+        <input class="form-control" class="form-control" name="mobile" placeholder="CONTACT NUMBER"/>
+    </div>
+</div> 
+
+        <div class="form-group">
+            <div class="col-sm-10 ">
+       
+        <input class="form-control" class="form-control" name="email" placeholder="EMAIL"/>
+    </div>
+</div> 
+
+        <div class="form-group">
+            <div class="col-sm-10 ">
+       
+        <input class="form-control" class="form-control" name="password" placeholder="PASSWORD" />
+    </div>
+</div> 
+
+        <div class="form-group">
+            <div class="col-sm-10 ">
+       
+        <input class="form-control" class="form-control" name="text" placeholder="QUERIES IF ANY" />
+    </div>
+</div> 
+    </form>
+    <button class="btn btn-primary send-button send-text" onclick='SubForm()'>SignUp</button>
+
+    <p>If any error occured during SignUp <a class="signupcontact" href="https://wa.me/+919539966671">Contact us</a> </p>
+</form> 
+
+
+</div>
+<img src="images/illustration.png" class="illustration" alt="Campus Ambassador Illustration">
+
+
+
+</div>
+
+
+
+<!-- end of form --> 
+<div class="circle"></div>
+
+</section>
+</body>
+</html>
